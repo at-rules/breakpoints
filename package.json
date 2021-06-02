@@ -1,0 +1,26 @@
+{
+  "name": "@at-rules/sass-template",
+  "version": "1.0.0",
+  "description": "A boilerplate to use for Sass Packages ",
+  "repository": "git@github.com:at-rules/sass-template.git",
+  "license": "MIT",
+  "author": "Kyle Essex <kylegavinessex@hotmail.com>",
+  "main": "dist/index.css",
+  "style": "dist/index.scss",
+  "sass": "src/index.scss",
+  "scripts": {
+    "test": "jest --env=node",
+    "lint": "stylelint src/**/*.scss",
+    "build": "sass ./src/index.scss:./dist/index.css"
+  },
+  "dependencies": {
+    "sass": "^1.34.0"
+  },
+  "devDependencies": {
+    "glob": "^7.1.7",
+    "sass-true": "^6.0.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.19.0"
+  }
+}
