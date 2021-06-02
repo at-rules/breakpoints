@@ -1,0 +1,175 @@
+@use 'true' as *;
+
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+
+@use '../src/index' as * with (
+  $breakpoints: (
+    "small": $small,
+    "medium": $medium,
+    "large": $large,
+  )
+);
+
+@include describe('breakpoint(small down)') {
+  @include it('Should render media query with and (max-width: $medium)') {
+    @include assert {
+      @include output {
+        @include breakpoint(small down) {
+          color: orange;
+        }
+      }
+
+      @include expect {
+        @media screen and (max-width: $small) {
+          color: orange;
+        }
+      }
+    }
+  }
+}
+
+@include describe('breakpoint(small only)') {
+  @include it('Should render media query with and (max-width: $medium) and no min-width as this is the lowest key') {
+    @include assert {
+      @include output {
+        @include breakpoint(small only) {
+          color: orange;
+        }
+      }
+
+      @include expect {
+        @media screen and (max-width: $small) {
+          color: orange;
+        }
+      }
+    }
+  }
+}
+
+@include describe('breakpoint(small up)') {
+  @include it('Should render media query with and (min-width: 0)') {
+    @include assert {
+      @include output {
+        @include breakpoint(small up) {
+          color: orange;
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: 0) {
+          color: orange;
+        }
+      }
+    }
+  }
+}
+
+@include describe('breakpoint(medium down)') {
+  @include it('Should render media query with and (max-width: $large)') {
+    @include assert {
+      @include output {
+        @include breakpoint(medium down) {
+          color: orange;
+        }
+      }
+
+      @include expect {
+        @media screen and (max-width: $medium) {
+          color: orange;
+        }
+      }
+    }
+  }
+}
+
+@include describe('breakpoint(medium only)') {
+  @include it('Should render media query with and (min-width: $medium) and (max-width: $large)') {
+    @include assert {
+      @include output {
+        @include breakpoint(medium only) {
+          color: orange;
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: $small) and (max-width: $medium) {
+          color: orange;
+        }
+      }
+    }
+  }
+}
+
+@include describe('breakpoint(medium up)') {
+  @include it('Should render media query with and (min-width: $medium)') {
+    @include assert {
+      @include output {
+        @include breakpoint(medium up) {
+          color: orange;
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: $medium) {
+          color: orange;
+        }
+      }
+    }
+  }
+}
+
+@include describe('breakpoint(large down)') {
+  @include it('Should render media query with and (max-width: $large)') {
+    @include assert {
+      @include output {
+        @include breakpoint(large down) {
+          color: orange;
+        }
+      }
+
+      @include expect {
+        @media screen and (max-width: $large) {
+          color: orange;
+        }
+      }
+    }
+  }
+}
+
+@include describe('breakpoint(large only)') {
+  @include it('Should render media query with and (min-width: $large) and no max width') {
+    @include assert {
+      @include output {
+        @include breakpoint(large only) {
+          color: orange;
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: $large) {
+          color: orange;
+        }
+      }
+    }
+  }
+}
+
+@include describe('breakpoint(large up)') {
+  @include it('Should render media query with and (min-width: $large)') {
+    @include assert {
+      @include output {
+        @include breakpoint(large up) {
+          color: orange;
+        }
+      }
+
+      @include expect {
+        @media screen and (min-width: $large) {
+          color: orange;
+        }
+      }
+    }
+  }
+}

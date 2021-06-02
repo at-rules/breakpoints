@@ -1,0 +1,51 @@
+@mixin min-max($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin min($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin max($max) {
+  @media screen and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin default($index, $breakpoints, $breakpoint) {
+  @if $index == 1 {
+    @include max(map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else if $index < length($breakpoints) {
+    @include min-max(map-get($breakpoints, previousKey($breakpoint, $breakpoints)), map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  @else if ($index == length($breakpoints)) {
+    @include min(map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@function nextKey($currentValue, $mapped-list) {
+  @return nth(
+    map_keys($mapped-list),
+    (index(map_keys($mapped-list), $currentValue)) + 1
+  );
+}
+
+@function previousKey($currentValue, $mapped-list) {
+  @return nth(
+    map_keys($mapped-list),
+    (index(map_keys($mapped-list), $currentValue)) - 1
+  );
+}
