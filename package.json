@@ -1,12 +1,12 @@
 {
   "name": "@at-rules/breakpoints",
   "version": "1.0.0",
-  "description": "A boilerplate to use for Sass Packages ",
-  "repository": "git@github.com:at-rules/sass-template.git",
+  "description": "Helper library for easily using breakpoints in SASS",
+  "repository": "git@github.com:at-rules/breakpoint.git",
   "license": "MIT",
   "author": "Kyle Essex <kylegavinessex@hotmail.com>",
-  "main": "dist/index.css",
-  "style": "dist/index.scss",
+  "main": "src/index.scss",
+  "style": "src/index.scss",
   "scripts": {
     "test": "jest --env=node",
     "lint": "stylelint src/**/*.scss"

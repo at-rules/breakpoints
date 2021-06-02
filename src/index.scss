@@ -1,8 +1,5 @@
 @use "helpers";
 
-/// The Default breakpoints defined by the system
-/// @access public
-/// @author Kyle Essex
 $breakpoints: (
   "mobile": 576px,
   "phablet": 768px,
@@ -23,22 +20,16 @@ $breakpoints: (
       @include helpers.min(0) {
         @content;
       }
-    }
-
-    @else {
+    } @else {
       @include helpers.min(map-get($breakpoints, $breakpoint)) {
         @content;
       }
     }
-  }
-
-  @else if ($direction == "down") {
+  } @else if ($direction == "down") {
     @include helpers.max(map-get($breakpoints, $breakpoint)) {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @include helpers.default($index, $breakpoints, $breakpoint) {
       @content;
     }
