@@ -2,7 +2,10 @@
   "name": "@at-rules/breakpoints",
   "version": "1.0.0",
   "description": "Helper library for easily using breakpoints in SASS",
-  "repository": "git@github.com:at-rules/breakpoint.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/at-rules/breakpoints.git"
+  },
   "license": "MIT",
   "author": "Kyle Essex <kylegavinessex@hotmail.com>",
   "main": "src/index.scss",
@@ -22,5 +25,9 @@
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.19.0"
   },
-  "sass": "src/index.scss"
+  "sass": "src/index.scss",
+  "bugs": {
+    "url": "https://github.com/at-rules/breakpoints/issues"
+  },
+  "homepage": "https://github.com/at-rules/breakpoins#readme"
 }
