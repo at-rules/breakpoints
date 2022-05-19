@@ -1,6 +1,6 @@
 {
   "name": "@at-rules/breakpoints",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper library for easily using breakpoints in SASS",
   "repository": {
     "type": "git",
