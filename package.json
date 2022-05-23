@@ -6,6 +6,16 @@
     "type": "git",
     "url": "git+ssh://git@github.com/at-rules/breakpoints.git"
   },
+  "keywords": [
+    "sass",
+    "scss",
+    "breakpoints",
+    "mixins",
+    "responsive",
+    "queries",
+    "media",
+    "media queries"
+  ],
   "license": "MIT",
   "author": "Kyle Essex <kylegavinessex@hotmail.com>",
   "main": "src/index.scss",
